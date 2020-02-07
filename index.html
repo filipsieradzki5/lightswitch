@@ -10,7 +10,7 @@
     <div class="wrapper">
       <div class="frame">
         <div class="circle">
-          <button class="hamburger glow-on-hover"></button>
+          <button class="switch"></button>
         </div>
       </div>
     </div>
@@ -48,7 +48,7 @@
       justify-content: center;
     }
 
-    .hamburger {
+    .switch {
       height: 50px;
       width: 50px;
       border-radius: 50%;
@@ -59,7 +59,7 @@
   </style>
   <script>
     let wrapper = document.querySelector(".wrapper");
-    let button = document.querySelector(".hamburger");
+    let button = document.querySelector(".switch");
 
     function handleClick() {
       console.log("u got clicked!");
@@ -74,15 +74,14 @@
           "rgb(245, 243, 243)";
         document.querySelector(".frame").style.boxShadow =
           "7px 6px 12px 1px rgba(0, 0, 0, 0.59)";
-        document.querySelector(".hamburger").style.background =
+        document.querySelector(".switch").style.background =
           "rgb(245, 243, 243)";
         isColored = false;
       } else {
         document.body.style.background = "rgb(15, 15, 15)";
         document.querySelector(".frame").style.background = "rgb(15, 15, 15)";
         document.querySelector(".frame").style.boxShadow = "none";
-        document.querySelector(".hamburger").style.background =
-          "rgb(15, 15, 15)";
+        document.querySelector(".switch").style.background = "rgb(15, 15, 15)";
         isColored = true;
       }
     }
