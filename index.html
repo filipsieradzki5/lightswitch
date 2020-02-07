@@ -10,23 +10,16 @@
     <div class="wrapper">
       <div class="frame">
         <div class="circle">
-          <button class="hamburger"></button>
+          <button class="hamburger glow-on-hover"></button>
         </div>
       </div>
     </div>
   </body>
   <style>
-    html[theme="dark"] {
-      background-color: rgb(31, 30, 30);
-    }
-
-    html[theme="light"] {
-      background-color: #929090;
-    }
-
     body {
-      background-color: #929090;
+      background-color: rgb(219, 132, 18);
     }
+
     .wrapper {
       height: 100vh;
       display: flex;
@@ -60,11 +53,14 @@
       width: 50px;
       border-radius: 50%;
       font-size: 40px;
+      padding: 0px;
+      outline: none;
     }
   </style>
   <script>
     let wrapper = document.querySelector(".wrapper");
     let button = document.querySelector(".hamburger");
+
     function handleClick() {
       console.log("u got clicked!");
     }
@@ -73,11 +69,20 @@
 
     function setColor() {
       if (isColored) {
-        document.body.style.background = "grey";
+        document.body.style.background = "rgb(219, 132, 18)";
+        document.querySelector(".frame").style.background =
+          "rgb(245, 243, 243)";
+        document.querySelector(".frame").style.boxShadow =
+          "7px 6px 12px 1px rgba(0, 0, 0, 0.59)";
+        document.querySelector(".hamburger").style.background =
+          "rgb(245, 243, 243)";
         isColored = false;
       } else {
-        document.body.style.background = "black";
-
+        document.body.style.background = "rgb(15, 15, 15)";
+        document.querySelector(".frame").style.background = "rgb(15, 15, 15)";
+        document.querySelector(".frame").style.boxShadow = "none";
+        document.querySelector(".hamburger").style.background =
+          "rgb(15, 15, 15)";
         isColored = true;
       }
     }
